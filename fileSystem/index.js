@@ -5,9 +5,9 @@ const path = require("path");
 fs.readFile(path.join(__dirname, "files", "demo.txt"), (error, data) => {
   if (error) throw error;
   if (data) {
-    fs.writeFile(
+    fs.appendFile(
       path.join(__dirname, "files", "writedemo.txt"),
-      data + "\n Added line",
+      "\n" + data + "\n Added line",
       (error) => {
         if (error) throw error;
       }
